@@ -1,1 +1,5 @@
+[mywebserver]
 172.31.23.106
+
+[mywebserver.vars]
+somu=httpd

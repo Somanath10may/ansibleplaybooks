@@ -5,11 +5,11 @@
   tasks:
   - name: install webserver
     dnf:
-      name: httpd
+      name: "{{somu}}"
       state: present
-    when: ansible_os_family=="ubuntu"
+    when: ansible_os_family=="RedHat"
   - name: start webserver
     service:
-      name: httpd
+      name: "{{somu}}"
       state: started
-    when: ansible_os_family=="ubuntu"
+    when: ansible_os_family=="RedHat"
