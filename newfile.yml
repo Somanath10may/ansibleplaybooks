@@ -1,0 +1,15 @@
+---
+- hosts: mywebserver
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: install webserver
+    dnf:
+      name: "{{somu}}"
+      state: present
+    when: ansible_os_family=="RedHat"
+  - name: start webserver
+    service:
+      name: "{{somu}}"
+      state: started
+    when: ansible_os_family=="RedHat"
