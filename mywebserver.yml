@@ -5,11 +5,11 @@
   tasks:
   - name: install webserver
     dnf:
-      name: httpd
+      name: "{{somu}}"
       state: present
     
   - name: start webserver
     service:
-      name: httpd
+      name: "{{somu}}"
       state: started
     
