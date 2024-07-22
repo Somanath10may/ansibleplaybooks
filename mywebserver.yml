@@ -7,9 +7,10 @@
     dnf:
       name: "{{somu}}"
       state: present
+    when: ansible_os_family=="Redhat"
     
   - name: start webserver
     service:
       name: "{{somu}}"
       state: started
-    
+    when: ansible_os_family=="Redhat"
