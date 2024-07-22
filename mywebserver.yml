@@ -5,4 +5,4 @@
   - name: install webserver
     dnf:
       name: httpd
-      state: absent
+      state: present
