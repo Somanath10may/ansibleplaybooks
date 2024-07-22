@@ -1,15 +1,15 @@
 ---
-- hosts: mywebserver
+- hosts: all
   become: yes
   gather_facts: yes
   tasks:
   - name: install webserver
     dnf:
-      name: "{{somu}}"
+      name: httpd
       state: present
     when: ansible_os_family=="RedHat"
   - name: start webserver
     service:
-      name: "{{somu}}"
+      name: httpd
       state: started
     when: ansible_os_family=="RedHat"
