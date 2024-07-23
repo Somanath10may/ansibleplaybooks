@@ -7,3 +7,7 @@
     dnf:
       name: git
       state: present
+  - name: copying the file
+    copy:
+       src: bot file
+       dest: /home/somu
