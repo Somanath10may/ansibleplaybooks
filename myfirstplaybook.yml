@@ -4,7 +4,7 @@
   tasks:
   - name: install git
     dnf:
-      name: git
+      name: "{{somu}}"
       state: present
   - name: install wget
     dnf:
