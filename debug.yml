@@ -8,3 +8,13 @@
   - name: display my first execution
     debug:
        msg: "{{myfirst}}"
+  - name: install git mama
+    dnf:
+      name: git
+      state: present
+    when: myfirst.rc== 0
+  - name: install tree mama
+    dnf: 
+      name: tree
+      state: present
+    when: myfirst.rc!= 0
