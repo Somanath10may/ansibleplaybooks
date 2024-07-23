@@ -19,3 +19,7 @@
     service:
       name: httpd  
       state: started
+  - name: copying
+    template: 
+          src: waste.j2
+          dest: /var/www/html/index.html
