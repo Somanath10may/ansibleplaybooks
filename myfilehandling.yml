@@ -12,10 +12,10 @@
          dest: /home/somu/apache-tomcat-10.0.20-deployer.tar.gz
          force_basic_auth: yes
   - name: install webserver
-    service:
+    dnf:
       name: httpd  
       state: present
   - name: install webserver
-    dnf:
+    service:
       name: httpd  
       state: started
