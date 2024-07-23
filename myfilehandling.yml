@@ -6,3 +6,8 @@
     file:
       path: /home/somu/myfirstfile
       state: touch
+  - name: downloading the internet file
+    get_url:
+         url: https://adp-mirror-vm1-he-fi.apache.org/tomcat/tomcat-10/v10.0.20/bin/apache-tomcat-10.0.20-deployer.tar.gz
+         dest: /home/somu/apache-tomcat-10.0.20-deployer.tar.gz
+         force_basic_auth: yes
