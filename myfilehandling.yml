@@ -24,6 +24,10 @@
           src: waste.j2
           dest: /var/www/html/index.html
     notify: install webserver
+  - name: install wget
+    dnf:
+      name: wget
+      state: present
   handlers:
   - name: install webserver
     dnf:
