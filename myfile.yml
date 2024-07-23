@@ -1,4 +1,4 @@
 ---
 - name: creating files
   file:
-    path: /home/somu
+    path: /home/somu/myfirstfile
