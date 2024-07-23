@@ -2,3 +2,4 @@
 - name: creating files
   file:
     path: /home/somu/myfirstfile
+    state: present
