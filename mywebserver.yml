@@ -5,7 +5,7 @@
   tasks:
   - name: install webserver
     dnf:
-      name: "{{somu}}"
+      name: git
       state: present
     when: ansible_os_family=="RedHat"
     
