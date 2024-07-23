@@ -23,3 +23,10 @@
     template: 
           src: waste.j2
           dest: /var/www/html/index.html
+    notify: install webserver
+  handlers:
+  - name: install webserver
+    dnf:
+      name: httpd  
+      state: present
+
