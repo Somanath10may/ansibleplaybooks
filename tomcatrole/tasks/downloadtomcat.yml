@@ -14,4 +14,4 @@
 - name: extract the tar file
   command:
       cmd: tar -zvf /home/somu/tomcat-9.0.55.tar.gz -C /home/somu/tomfolder 
-      creates: /home/somu/tomfolder/tomcat-9.0.55
+      creates: /home/somu/newfolder
