@@ -2,5 +2,11 @@
 - name: downloading internet file(tom tar)
   get_url:
        url: https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.55/tomcat-9.0.55.tar.gz
-       dest:
-       force_basic_auth: yes 
+       dest: /home/somu/tomcat-9.0.55.tar.gz
+       force_basic_auth: yes
+
+
+- name: creating a new file
+  file:
+     path: /home/somu
+     state: directory
