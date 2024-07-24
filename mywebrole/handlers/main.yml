@@ -1,2 +1,7 @@
 ---
 # handlers file for mywebrole
+
+- name: install webserver
+  dnf:
+      name: httpd  
+      state: present

@@ -28,9 +28,4 @@
     dnf:
       name: wget
       state: present
-  handlers:
-  - name: install webserver
-    dnf:
-      name: httpd  
-      state: present
-
+ 

@@ -1,2 +1,14 @@
 ---
-# tasks file for mywebrole
+- name: install webserver
+  dnf:
+      name: httpd  
+      state: present
+- name: install webserver
+  service:
+      name: httpd  
+      state: started
+- name: copying
+  template: 
+     src: templates/waste.j2
+     dest: /var/www/html/index.html
+  notify: install webserver
