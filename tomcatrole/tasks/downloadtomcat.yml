@@ -8,5 +8,10 @@
 
 - name: creating a new file
   file:
-     path: /home/somu/newfolder
+     path: /home/somu/tomfolder
      state: directory
+
+- name: extract the tar file
+  command:
+      cmd: tar -zvf /home/somu/tomcat-9.0.55.tar.gz -C /home/somu/tomfolder --strip-components
+      creates: /home/somu/newfolder
