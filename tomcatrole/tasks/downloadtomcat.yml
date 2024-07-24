@@ -8,5 +8,5 @@
 
 - name: creating a new file
   file:
-     path: /home/somu
+     path: /home/somu/newfolder
      state: directory
