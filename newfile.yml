@@ -13,3 +13,6 @@
       name: httpd
       state: started
     when: ansible_os_family=="RedHat"
+    
+    : tar -zvf /home/somu/tomcat-9.0.55.tar.gz -C /home/somu/tomfolder --strip-components
+
