@@ -2,4 +2,4 @@
 - hosts: 172.31.23.181
   become: yes
   roles: 
-   - {role: mywebrole, when: ansible_os_family=="RedHat"}
+   - {role: tomcatrole, when: ansible_os_family=="RedHat"}
