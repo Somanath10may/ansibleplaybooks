@@ -1,5 +1,5 @@
 ---
 - name: link tomcatup files
-  command: ln -s /home/somu/opt/tomcat/bin/startup.sh usr/local/bin/tomcatup
+  command: ln -s /opt/tomcat/bin/startup.sh usr/local/bin/tomcatup
 - name: link tomcatdown files
-  command: ln -s /home/somu/opt/tomcat/bin/shutdown.sh usr/local/bin/tomcatdown
+  command: ln -s /opt/tomcat/bin/shutdown.sh usr/local/bin/tomcatdown
