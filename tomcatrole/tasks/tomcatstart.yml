@@ -1,4 +1,9 @@
 ---
+- name: Link tomcatdown files
+  command: ln -s /home/somu/opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
+  args:
+    creates: /usr/local/bin/tomcatdown
+    
 - name: down tomcat
   command: usr/local/bin/tomcatdown
   
