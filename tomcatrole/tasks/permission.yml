@@ -1,0 +1,11 @@
+--- 
+- name: give permissions
+  command: chmod +x /home/somu/opt/tomcat/bin
+- name: give permissions
+  command: chmod +x /home/somu/opt/tomcat/lib
+- name: give permissions
+  command: chmod +x /home/somu/opt/tomcat/webapps
+- name: give permissions
+  command: chmod +x /home/somu/opt/tomcat/logs
+- name: give permissions
+  command: chmod +x /home/somu/opt/tomcat/temp
