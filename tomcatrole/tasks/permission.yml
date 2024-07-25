@@ -1,15 +1,5 @@
 --- 
-- name: give permissions
-  command: chown -R somu:somu /home/somu/opt/tomcat/bin
-- name: give permissions
-  command: chown -R somu:somu /home/somu/opt/tomcat/conf
-- name: give permissions
-  command: chown -R somu:somu /home/somu/opt/tomcat/logs
-- name: give permissions
-  command: chown -R somu:somu /home/somu/opt/tomcat/temp
-- name: give permissions
-  command: chown -R somu:somu /home/somu/opt/tomcat/lib
-- name: give permissions
-  command: chown -R somu:somu /home/somu/opt/tomcat/work
-- name: give permissions
-  command: chown -R somu:somu /home/somu/opt/tomcat/webapps
+- name: give permissions for startup
+  command: chown -R somu:somu /home/somu/opt/tomcat/bin/startup.sh
+- name: give permissions for shutdown
+  command: chown -R somu:somu /home/somu/opt/tomcat/bin/shutdown.sh
