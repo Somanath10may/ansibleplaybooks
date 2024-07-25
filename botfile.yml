@@ -1,0 +1,82 @@
+---
+- hosts: 172.31.23.106
+  become: yes
+  tasks:
+    - name: update package
+      dnf: 
+        name: "*"
+        state: latest
+
+    - name: install java
+      dnf: 
+        name: java-1.8*
+        state: present
+
+    - name: install webserver
+      dnf: 
+        name: httpd
+        state: present
+
+    - name: downloading internet file (tomcat tar)
+      get_url:
+        url: https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.55/tomcat-9.0.55.tar.gz
+        dest: /home/somu/tomcat-9.0.55.tar.gz
+        force_basic_auth: yes
+
+    - name: creating a new directory
+      file:
+        path: /home/somu/opt/tomcat
+        state: directory
+
+    - name: extract the tar file
+      command: tar -xzvf /home/somu/tomcat-9.0.55.tar.gz -C /home/somu/opt/tomcat --strip-components=1
+      args:
+        creates: /home/somu/opt/tomcat/bin
+
+    - name: give permissions for startup
+      file:
+        path: /home/somu/opt/tomcat/bin/startup.sh
+        mode: '0755'
+
+    - name: give permissions for shutdown
+      file:
+        path: /home/somu/opt/tomcat/bin/shutdown.sh
+        mode: '0755'
+
+    - name: Ensure /usr/local/bin directory exists
+      file:
+        path: /usr/local/bin
+        state: directory
+
+    - name: Link tomcatup files
+      file:
+        src: /home/somu/opt/tomcat/bin/startup.sh
+        dest: /usr/local/bin/tomcatup
+        state: link
+
+    - name: Link tomcatdown files
+      file:
+        src: /home/somu/opt/tomcat/bin/shutdown.sh
+        dest: /usr/local/bin/tomcatdown
+        state: link
+
+    - name: host manager context into all nodes
+      template: 
+        src: templates/host.j2
+        dest: /home/somu/opt/tomcat/webapps/host-manager/META-INF/context.xml
+
+    - name: manager context into all nodes
+      template: 
+        src: templates/manager.j2
+        dest: /home/somu/opt/tomcat/webapps/manager/META-INF/context.xml
+
+    - name: tomcat-users into all nodes
+      template: 
+        src: templates/tomuser.j2
+        dest: /home/somu/opt/tomcat/conf/tomcat-users.xml
+
+    - name: down tomcat
+      command: /usr/local/bin/tomcatdown
+
+    - name: up tomcat
+      command: /usr/local/bin/tomcatup
