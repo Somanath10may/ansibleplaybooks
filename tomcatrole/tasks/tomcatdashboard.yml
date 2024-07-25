@@ -1,0 +1,13 @@
+---
+- name: host manager context into all nodes
+  template: 
+       src: templates/host.j2
+       dest: /home/somu/opt/tomcat/webapps/host-manager/META-INF/context.xml
+- name: manager context into all nodes
+  template: 
+       src: templates/manager.j2
+       dest: /home/somu/opt/tomcat/webapps/host-manager/META-INF/context.xml
+- name: tomcat-users into all node
+  template: 
+       src: templates/tomuser.j2
+       dest: /home/somu/opt/tomcat/conf/tomcat-users.xml
