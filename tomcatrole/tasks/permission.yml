@@ -2,10 +2,14 @@
 - name: give permissions
   command: chown -R somu:somu /home/somu/opt/tomcat/bin
 - name: give permissions
-  command: chmod +x /home/somu/opt/tomcat/lib
+  command: chown -R somu:somu /home/somu/opt/tomcat/conf
 - name: give permissions
-  command: chmod +x /home/somu/opt/tomcat/webapps
+  command: chown -R somu:somu /home/somu/opt/tomcat/logs
 - name: give permissions
-  command: chmod +x /home/somu/opt/tomcat/logs
+  command: chown -R somu:somu /home/somu/opt/tomcat/temp
 - name: give permissions
-  command: chmod +x /home/somu/opt/tomcat/temp
+  command: chown -R somu:somu /home/somu/opt/tomcat/lib
+- name: give permissions
+  command: chown -R somu:somu /home/somu/opt/tomcat/work
+- name: give permissions
+  command: chown -R somu:somu /home/somu/opt/tomcat/webapps
