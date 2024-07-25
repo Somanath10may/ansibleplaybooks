@@ -1,9 +1,19 @@
 ---
-    
-
 - name: Link tomcatup files
   command: ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
- 
-- name: link tomcatdown files
+  args:
+    creates: /usr/local/bin/tomcatup
+
+- name: Link tomcatdown files
   command: ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
+  args:
+    creates: /usr/local/bin/tomcatdown
+
+    
+
+#- name: Link tomcatup files
+ # command: ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
+ 
+#- name: link tomcatdown files
+ # command: ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
  
