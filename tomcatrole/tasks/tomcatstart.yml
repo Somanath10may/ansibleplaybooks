@@ -1,8 +1,4 @@
 ---
-- name: Ensure /usr/local/bin directory exists
-  file:
-    path: /usr/local/bin
-    state: directory
     
 - name: down tomcat
   command: usr/local/bin/tomcatdown

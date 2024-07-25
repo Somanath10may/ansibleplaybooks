@@ -1,5 +1,5 @@
 --- 
 - name: give permissions for startup
-  command: chmod +X /home/somu/opt/tomcat/bin/startup.sh
+  command: chmod +X /opt/tomcat/bin/startup.sh
 - name: give permissions for shutdown
-  command: chmod +X /home/somu/opt/tomcat/bin/shutdown.sh
+  command: chmod +X /opt/tomcat/bin/shutdown.sh

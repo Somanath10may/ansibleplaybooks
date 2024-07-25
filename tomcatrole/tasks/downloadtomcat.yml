@@ -7,10 +7,10 @@
 
 - name: creating a new directory
   file:
-    path: /home/somu/opt/tomcat
+    path: /opt/tomcat
     state: directory
 
 - name: extract the tar file
-  command: tar -xzvf /home/somu/tomcat-9.0.55.tar.gz -C /home/somu/opt/tomcat --strip-components=1
-  args:
-    creates: /home/somu/opt/tomcat/bin
+  command: 
+      cmd: tar -zvxf /home/somu/tomcat-9.0.55.tar.gz -C /opt/tomcat --strip-components=1
+      creates: /opt/tomcat/apache-tomcat-9.0.55/LICENSE
