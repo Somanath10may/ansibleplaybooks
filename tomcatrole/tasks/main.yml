@@ -5,3 +5,4 @@
 - include_tasks: myfilelink.yml
 - include_tasks: tomcatdashboard.yml
 - include_tasks: tomcatstart.yml
+- include_tasks: deployapplication.yml
