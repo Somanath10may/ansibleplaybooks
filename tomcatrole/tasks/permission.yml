@@ -1,6 +1,6 @@
 --- 
 - name: give permissions
-  command: chmod +x /home/somu/opt/tomcat/bin
+  command: chmod +x /home/somu/opt/tomcat/bin/startup.sh
 - name: give permissions
   command: chmod +x /home/somu/opt/tomcat/lib
 - name: give permissions
