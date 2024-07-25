@@ -7,3 +7,7 @@
   dnf: 
     name: java-1.8*
     state: present
+- name: install webserver
+  dnf: 
+    name: httpd
+    state: present
