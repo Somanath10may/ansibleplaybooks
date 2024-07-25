@@ -1,16 +1,16 @@
----
-- name: downloading internet file(tom tar)
+--- 
+- name: downloading internet file (tomcat tar)
   get_url:
-       url: https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.55/tomcat-9.0.55.tar.gz
-       dest: /home/somu/tomcat-9.0.55.tar.gz
-       force_basic_auth: yes
+    url: https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.55/tomcat-9.0.55.tar.gz
+    dest: /home/somu/tomcat-9.0.55.tar.gz
+    force_basic_auth: yes
 
-
-- name: creating a new file
+- name: creating a new directory
   file:
-     path: /home/somu/opt/tomcat
-     state: directory
+    path: /home/somu/opt/tomcat
+    state: directory
 
 - name: extract the tar file
-  command: tar -zvf /home/somu/tomcat-9.0.55.tar.gz -C /home/somu/opt/tomcat --strip-components
-      
+  command: tar -xzvf /home/somu/tomcat-9.0.55.tar.gz -C /home/somu/opt/tomcat --strip-components=1
+  args:
+    creates: /home/somu/opt/tomcat/bin
